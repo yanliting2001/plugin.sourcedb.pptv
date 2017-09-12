@@ -202,7 +202,8 @@ def play(params):
         xbmc.Player().play("C:/Download/20160810-111059351.mkv", windowed=True)
         xbmc.executebuiltin("ActivateWindow(fullscreenvideo)")
         return
-    data = pptv.get_video_detail(params.cid)
+    cid = params.cid
+    data = pptv.get_video_detail(cid)
     data = simplejson.loads(data)
     total_num = data['video_list_count']
     if data and "video_list" in data:
